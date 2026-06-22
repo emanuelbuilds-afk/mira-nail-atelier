@@ -3,334 +3,175 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mira Nail Atelier | Manichiură & Pedichiură</title>
-<meta name="description" content="Mira Nail Atelier - manichiură, construcție și pedichiură. Tehnici și produse profesionale." />
+<title>Luminița Georgescu | Claritate, transformare și Enjoy Being Alive</title>
+<meta name="description" content="Sesiuni individuale, profil hologenetic și ghidare pentru claritate și transformare reală. Metoda Enjoy Being Alive - cu blândețe și adevăr." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@400;500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: { gold:'#b0894f', goldlight:'#d2b487', ink:'#0e0c0a', cream:'#f6f3ee' },
-      fontFamily: { serif:['"Playfair Display"','serif'], sans:['Jost','sans-serif'], script:['"Pinyon Script"','cursive'] },
-    },
-  },
-};
-</script>
-<style>
-  html { scroll-behavior: smooth; }
-  body { font-family:'Jost',sans-serif; color:#2a2622; }
-  h1,h2,h3,h4 { font-family:'Playfair Display',serif; }
-  .banner {
-    background:
-      radial-gradient(120% 140% at 85% 30%, rgba(176,137,79,0.55) 0%, rgba(176,137,79,0) 55%),
-      linear-gradient(120deg, #0e0c0a 0%, #1c150d 55%, #060504 100%);
-  }
-  .hero-img {
-    background:
-      linear-gradient(to top, rgba(14,12,10,0.82) 0%, rgba(14,12,10,0.35) 55%, rgba(14,12,10,0.55) 100%),
-      url('https://images.pexels.com/photos/3997383/pexels-photo-3997383.jpeg?auto=compress&cs=tinysrgb&w=1920') center 30%/cover no-repeat;
-  }
-  .card-shadow { box-shadow: 0 18px 40px -22px rgba(60,40,16,0.45); }
-  .gold-line::after { content:""; display:block; width:64px; height:2px; background:#b0894f; margin-top:14px; }
-  .gold-line.center::after { margin-left:auto; margin-right:auto; }
-  .nav-link { position:relative; }
-  .nav-link::after { content:""; position:absolute; left:0; bottom:-4px; width:0; height:1px; background:#b0894f; transition:width .25s ease; }
-  .nav-link:hover::after, .nav-link.active::after { width:100%; }
-  .btn-outline { transition:background-color .25s ease, color .25s ease, transform .15s ease; }
-  .btn-outline:hover { background:#b0894f; color:#fff; }
-  .btn-outline:active { transform:translateY(1px); }
-</style>
+<link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-white">
+<body>
 
 <!-- ===== HEADER ===== -->
-<header class="sticky top-0 z-50 bg-ink/95 backdrop-blur border-b border-white/5">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8 flex items-center justify-between h-20">
-    <a href="index.html" class="flex items-center gap-3 shrink-0">
-      <span class="font-script text-goldlight text-[2.7rem] leading-[0.7]">Mn</span>
-      <span class="leading-tight border-l border-white/15 pl-3 hidden sm:block">
-        <span class="block font-serif text-white tracking-[0.2em] text-[12px]">MIRA NAIL</span>
-        <span class="block font-serif text-gold tracking-[0.38em] text-[8.5px] mt-1">ATELIER</span>
-      </span>
+<header class="site-header">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.webp" alt="Enjoy Being Alive — Luminița Georgescu" class="brand-logo" />
     </a>
-    <nav class="hidden lg:flex items-center gap-7 text-[13px] tracking-wide text-white/85 font-medium uppercase">
-      <a href="index.html" class="nav-link active text-white" data-en="Home">Acasă</a>
-      <a href="about.html" class="nav-link" data-en="About">Despre</a>
-      <a href="services.html" class="nav-link" data-en="Services">Servicii</a>
-      <a href="gallery.html" class="nav-link" data-en="Gallery">Galerie</a>
-      <a href="contact.html" class="nav-link" data-en="Contact">Contact</a>
+    <nav class="nav-links">
+      <a href="index.html" class="active">Acasă</a>
+      <a href="despre.html">Despre mine</a>
+      <a href="servicii.html">Servicii</a>
+      <a href="ghid.html">Ghid practic</a>
+      <a href="magazin.html">Magazin</a>
+      <a href="contact.html">Contact</a>
     </nav>
-    <div class="flex items-center gap-3">
-      <button data-lang-btn class="text-white/85 border border-white/25 rounded-full px-3 py-1 text-xs tracking-widest hover:border-gold hover:text-goldlight transition">EN</button>
-      <a href="tel:0700000000" class="btn-outline hidden lg:inline-block border border-goldlight text-white tracking-[0.18em] text-[11px] uppercase px-5 py-2.5" data-en="Book">Programează</a>
-      <button id="menuBtn" class="lg:hidden text-white p-2" aria-label="Meniu">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <div style="display:flex;align-items:center;gap:.8rem;">
+      <a href="contact.html" class="btn btn--cta show-lg">Programează-te</a>
+      <button id="menuBtn" class="menu-btn" aria-label="Meniu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </div>
-  <div id="mobileNav" class="hidden lg:hidden bg-ink border-t border-white/5 px-5 pb-5">
-    <nav class="flex flex-col gap-3 pt-3 text-sm uppercase tracking-wide text-white/85">
-      <a href="index.html" class="text-gold" data-en="Home">Acasă</a>
-      <a href="about.html" data-en="About">Despre</a>
-      <a href="services.html" data-en="Services">Servicii</a>
-      <a href="gallery.html" data-en="Gallery">Galerie</a>
-      <a href="contact.html" data-en="Contact">Contact</a>
-      <a href="tel:0700000000" class="text-goldlight" data-en="Book an appointment">Programează</a>
-    </nav>
+  <div id="mobileNav" class="mobile-nav">
+    <a href="index.html" class="active">Acasă</a>
+    <a href="despre.html">Despre mine</a>
+    <a href="servicii.html">Servicii</a>
+    <a href="ghid.html">Ghid practic</a>
+    <a href="magazin.html">Magazin</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn--cta" style="margin-top:.8rem;">Programează-te</a>
   </div>
 </header>
 
+<main>
+
 <!-- ===== HERO ===== -->
-<section class="hero-img min-h-[80vh] flex items-center">
-  <div class="max-w-7xl mx-auto w-full px-5 lg:px-8 py-24 text-center">
-    <h1 class="text-white font-serif text-5xl md:text-7xl leading-tight" data-en="Nails crafted with care and passion">Unghii lucrate cu grijă și pasiune</h1>
-    <p class="text-white/80 max-w-xl mx-auto mt-6 text-[15px] leading-relaxed" data-en="A top salon with premium services. Mani &amp; pedi - complete pampering for hands and feet. A refined experience.">Salon de top cu servicii premium. Mani &amp; pedi - răsfăț complet pentru mâini și picioare. Experiență rafinată.</p>
-    <a href="tel:0700000000" class="btn-outline inline-block mt-9 border border-goldlight text-white tracking-[0.2em] text-xs uppercase px-9 py-4" data-en="Book now">Programează</a>
-  </div>
-</section>
-
-<!-- ===== WELCOME ===== -->
-<section class="py-20 lg:py-28">
-  <div class="max-w-6xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-    <div class="relative">
-      <img src="https://images.pexels.com/photos/3997388/pexels-photo-3997388.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Lucrare unghii realizată la Mira Nail Atelier" class="w-full rounded-sm card-shadow object-cover aspect-square" />
-      <div class="hidden md:block absolute -bottom-6 -right-6 bg-gold text-white text-center px-7 py-6 rounded-sm">
-        <span class="block font-serif text-3xl leading-none">4.96</span>
-        <span class="block text-[10px] tracking-[0.2em] uppercase mt-1" data-en="out of 45 reviews">din 45 recenzii</span>
+<section class="section" style="padding-top:3.5rem;">
+  <div class="wrap" style="display:grid;gap:3rem;align-items:center;" data-stagger>
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center" style="display:grid;">
+      <div>
+        <p class="label reveal">Metoda Enjoy Being Alive</p>
+        <p class="script reveal" style="font-size:clamp(2.6rem,5vw,3.6rem);margin:.4rem 0 .2rem;">Enjoy Being Alive</p>
+        <h1 id="hero-title" class="reveal" style="margin-top:.5rem;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2rem,4vw,3.2rem);line-height:1.18;letter-spacing:-.01em;color:var(--ink);">Claritate acolo unde acum simți doar blocaj</h1>
+        <p id="hero-lead" class="lead reveal" style="margin-top:1.6rem;max-width:30rem;">Un spațiu real de lucru cu tine, în care începi să vezi limpede ce te ține pe loc și ce ai de făcut mai departe.</p>
+        <div class="reveal" style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.2rem;">
+          <a href="contact.html" class="btn btn--cta">Programează-te <span class="arrow">→</span></a>
+          <a href="servicii.html" class="btn btn--ghost">Vezi serviciile</a>
+        </div>
       </div>
-    </div>
-    <div>
-      <p class="text-gold tracking-[0.35em] text-xs uppercase" data-en="Welcome to">Bine ai venit la</p>
-      <h2 class="font-serif text-4xl md:text-5xl mt-3 gold-line">Mira Nail Atelier</h2>
-      <p class="mt-7 text-[15px] leading-[1.8] text-neutral-600" data-en="At Mira Nail Atelier we work with attention to detail and premium products, so that every set of nails is not only beautiful but also long-lasting.">La Mira Nail Atelier lucrăm cu atenție la detalii și cu produse premium, pentru ca fiecare set de unghii să fie nu doar frumos, ci și rezistent în timp.</p>
-      <p class="mt-4 text-[15px] leading-[1.8] text-neutral-600" data-en="From a simple manicure to nail extensions and custom designs, every appointment is a moment of pampering in a clean, relaxing space.">De la o manichiură simplă până la construcție și modele personalizate, fiecare programare este un moment de răsfăț, într-un mediu curat și relaxant.</p>
-      <a href="about.html" class="btn-outline inline-block mt-8 border border-gold text-gold tracking-[0.2em] text-xs uppercase px-8 py-3.5" data-en="About us">Despre noi</a>
+      <div class="framed reveal">
+        <img id="hero-img" src="https://8e7f0d5cdc.clvaw-cdnwnd.com/a75a967756010852475dcf8b4b092078/200001038-69c2869c2a/020bun-6.jpeg?ph=8e7f0d5cdc" alt="Luminița Georgescu" style="width:100%;aspect-ratio:4/5;object-fit:cover;" />
+        <div style="position:absolute;bottom:-1.2rem;left:-1.2rem;z-index:2;background:var(--cta);color:var(--cream);padding:1.1rem 1.6rem;">
+          <span style="display:block;font-family:'Pinyon Script',cursive;color:var(--goldlight);font-size:1.7rem;line-height:1;">Cu blândețe</span>
+          <span style="display:block;text-transform:uppercase;letter-spacing:.22em;font-size:.62rem;margin-top:.4rem;color:rgba(255,255,255,.65);">și adevăr</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== PROGRAM ===== -->
-<section class="banner py-16">
-  <div class="max-w-5xl mx-auto px-5 lg:px-8 grid md:grid-cols-3 gap-8 items-center text-white">
-    <div>
-      <h3 class="font-serif text-3xl text-white" data-en="Working Hours">Program</h3>
-      <span class="block w-14 h-[2px] bg-gold mt-4"></span>
-    </div>
-    <div class="md:col-span-2 grid sm:grid-cols-2 gap-x-10 gap-y-4 text-[15px]">
-      <div class="flex justify-between border-b border-white/10 pb-3">
-        <span class="text-white/70" data-en="Monday - Sunday">Luni - Duminică</span>
-        <span class="text-goldlight">9:00 - 18:00</span>
-      </div>
-      <div class="flex justify-between border-b border-white/10 pb-3">
-        <span class="text-white/70" data-en="Phone">Telefon</span>
-        <span class="text-goldlight">0700 000 000</span>
-      </div>
-      <p class="sm:col-span-2 text-white/55 text-[13px] tracking-wide" data-en="Appointments by phone.">Programări prin telefon.</p>
-    </div>
+<!-- ===== INTRO ===== -->
+<section class="section bg-white">
+  <div class="wrap" style="max-width:46rem;text-align:center;" data-stagger>
+    <div class="rule reveal" style="max-width:9rem;margin:0 auto 1.6rem;"><span class="dot"></span></div>
+    <p class="label reveal">Bine ai venit</p>
+    <h2 class="h-section reveal" style="margin-top:1rem;">Nu ai ajuns aici<br>întâmplător</h2>
+    <p class="lead reveal" style="margin-top:1.6rem;">Poate ești într-un punct în care simți că ceva nu mai funcționează în viața ta, dar nu e clar încă ce ai de făcut mai departe.</p>
+    <p class="body-text reveal" style="margin-top:1.2rem;">Nu toate răspunsurile vin din a gândi mai mult. Uneori, claritatea apare când ai un spațiu în care te poți liniști, te poți deschide și nu trebuie să demonstrezi nimic. Pentru că, dincolo de ce spui, există întotdeauna un mecanism mai profund care se repetă. Acolo lucrăm.</p>
   </div>
 </section>
 
 <!-- ===== SERVICES ===== -->
-<section class="py-20 lg:py-28">
-  <div class="max-w-6xl mx-auto px-5 lg:px-8">
-    <div class="text-center max-w-2xl mx-auto">
-      <p class="text-gold tracking-[0.35em] text-xs uppercase" data-en="What we offer">Ce oferim</p>
-      <h2 class="font-serif text-4xl md:text-5xl mt-3 gold-line center" data-en="Services and prices">Servicii și prețuri</h2>
-      <p class="mt-7 text-[15px] leading-[1.8] text-neutral-600" data-en="Complete manicure, nail extension and pedicure services, with professional products and a flawless finish.">Servicii complete de manichiură, construcție și pedichiură, cu produse profesionale și finisaje impecabile.</p>
+<section class="section">
+  <div class="wrap">
+    <div style="text-align:center;max-width:36rem;margin:0 auto;" data-stagger>
+      <p class="label reveal">Cum lucrăm împreună</p>
+      <h2 class="h-section reveal underline-gold center" style="margin-top:.8rem;">Servicii</h2>
     </div>
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 mt-14">
-      <div class="group bg-white border border-neutral-100 card-shadow rounded-sm p-8 text-center transition hover:-translate-y-1">
-        <div class="mx-auto w-14 h-14 grid place-items-center rounded-full bg-cream text-gold group-hover:bg-gold group-hover:text-white transition">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 12V6a2 2 0 0 1 4 0M11 6V4a2 2 0 0 1 4 0v8M7 12v5a4 4 0 0 0 8 0v-5"/></svg>
-        </div>
-        <h3 class="font-serif text-xl mt-5" data-en="Manicure">Manichiură</h3>
-        <p class="text-[14px] text-neutral-500 mt-3 leading-relaxed" data-en="Simple or semi-permanent manicure, with cuticle styling and a clean finish.">Manichiură simplă sau semipermanentă, cu stilizarea cuticulei și finisaj curat.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7" style="margin-top:3.5rem;display:grid;" data-stagger>
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/></svg></div>
+        <h3 style="font-size:1.3rem;margin-top:1.3rem;">Sesiuni individuale 1:1</h3>
+        <p class="body-text" style="margin-top:.7rem;">Un spațiu sigur, direct și clar pentru oameni care au nevoie să vadă limpede ce îi ține pe loc și ce au de făcut mai departe.</p>
+        <p id="price-s1" class="price" style="font-size:1.25rem;margin-top:1.2rem;">de la 500 lei</p>
+        <a href="servicii.html" class="tag" style="display:inline-block;margin-top:.8rem;border-bottom:1px solid var(--gold);padding-bottom:.2rem;color:var(--ink);">Detalii →</a>
       </div>
-      <div class="group bg-white border border-neutral-100 card-shadow rounded-sm p-8 text-center transition hover:-translate-y-1">
-        <div class="mx-auto w-14 h-14 grid place-items-center rounded-full bg-cream text-gold group-hover:bg-gold group-hover:text-white transition">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 21V8c0-3 1-5 3-5s3 2 3 5v13M9 12h6"/></svg>
-        </div>
-        <h3 class="font-serif text-xl mt-5" data-en="Gel on natural nail">Gel pe unghia naturală</h3>
-        <p class="text-[14px] text-neutral-500 mt-3 leading-relaxed" data-en="Strengthening the natural nail with gel, for resistance and a natural look.">Întărirea unghiei naturale cu gel, pentru rezistență și un aspect natural.</p>
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg></div>
+        <h3 style="font-size:1.3rem;margin-top:1.3rem;">Mesajul vieții tale</h3>
+        <p class="body-text" style="margin-top:.7rem;">O analiză profundă a hărții tale hologenetice care te ajută să înțelegi mai clar cine ești, prin ce treci și încotro mergi.</p>
+        <p id="price-s2" class="price" style="font-size:1.25rem;margin-top:1.2rem;">de la 450 lei</p>
+        <a href="servicii.html" class="tag" style="display:inline-block;margin-top:.8rem;border-bottom:1px solid var(--gold);padding-bottom:.2rem;color:var(--ink);">Detalii →</a>
       </div>
-      <div class="group bg-white border border-neutral-100 card-shadow rounded-sm p-8 text-center transition hover:-translate-y-1">
-        <div class="mx-auto w-14 h-14 grid place-items-center rounded-full bg-cream text-gold group-hover:bg-gold group-hover:text-white transition">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/></svg>
-        </div>
-        <h3 class="font-serif text-xl mt-5" data-en="Nail extensions">Construcție</h3>
-        <p class="text-[14px] text-neutral-500 mt-3 leading-relaxed" data-en="Extensions on form or tips, for the length and shape you want.">Construcție pe șablon sau tips, pentru lungimea și forma dorită.</p>
-      </div>
-      <div class="group bg-white border border-neutral-100 card-shadow rounded-sm p-8 text-center transition hover:-translate-y-1">
-        <div class="mx-auto w-14 h-14 grid place-items-center rounded-full bg-cream text-gold group-hover:bg-gold group-hover:text-white transition">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c4 4 6 7 6 10a6 6 0 0 1-12 0c0-3 2-6 6-10Z"/></svg>
-        </div>
-        <h3 class="font-serif text-xl mt-5" data-en="Babyboomer / French">Babyboomer / French</h3>
-        <p class="text-[14px] text-neutral-500 mt-3 leading-relaxed" data-en="Classic babyboomer and French designs on any type of nail.">Modele clasice babyboomer și french pe orice tip de unghii.</p>
-      </div>
-      <div class="group bg-white border border-neutral-100 card-shadow rounded-sm p-8 text-center transition hover:-translate-y-1">
-        <div class="mx-auto w-14 h-14 grid place-items-center rounded-full bg-cream text-gold group-hover:bg-gold group-hover:text-white transition">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 14c0-3 1-6 5-6s5 3 5 6M6 14h10M8 14v3M12 14v4M16 14v3"/></svg>
-        </div>
-        <h3 class="font-serif text-xl mt-5" data-en="Pedicure">Pedichiură</h3>
-        <p class="text-[14px] text-neutral-500 mt-3 leading-relaxed" data-en="Semi-permanent pedicure and sole treatment, for complete care.">Pedichiură semipermanentă și tratament pentru talpă, îngrijire completă.</p>
-      </div>
-      <div class="group bg-white border border-neutral-100 card-shadow rounded-sm p-8 text-center transition hover:-translate-y-1">
-        <div class="mx-auto w-14 h-14 grid place-items-center rounded-full bg-cream text-gold group-hover:bg-gold group-hover:text-white transition">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 4 7v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
-        </div>
-        <h3 class="font-serif text-xl mt-5" data-en="Nail hygiene">Igienizare unghie</h3>
-        <p class="text-[14px] text-neutral-500 mt-3 leading-relaxed" data-en="Removal of the affected nail and preparation for treatment.">Îndepărtarea unghiei afectate și pregătirea pentru tratament.</p>
-      </div>
-    </div>
-
-    <div class="text-center mt-12">
-      <a href="services.html" class="btn-outline inline-block border border-gold text-gold tracking-[0.2em] text-xs uppercase px-9 py-4" data-en="See full price list">Vezi toate prețurile</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== GALLERY ===== -->
-<section class="bg-cream py-20 lg:py-24">
-  <div class="max-w-6xl mx-auto px-5 lg:px-8">
-    <div class="text-center">
-      <p class="text-gold tracking-[0.35em] text-xs uppercase" data-en="Gallery">Galerie</p>
-      <h2 class="font-serif text-4xl md:text-5xl mt-3 gold-line center" data-en="Recent work">Lucrări recente</h2>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12">
-      <img src="https://images.pexels.com/photos/3997381/pexels-photo-3997381.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Lucrare unghii" class="w-full aspect-square object-cover rounded-sm card-shadow" />
-      <img src="https://images.pexels.com/photos/3997388/pexels-photo-3997388.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Lucrare unghii" class="w-full aspect-square object-cover rounded-sm card-shadow" />
-      <img src="https://images.pexels.com/photos/3997392/pexels-photo-3997392.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Lucrare unghii" class="w-full aspect-square object-cover rounded-sm card-shadow" />
-      <img src="https://images.pexels.com/photos/3997383/pexels-photo-3997383.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Lucrare unghii" class="w-full aspect-square object-cover rounded-sm card-shadow" />
-      <img src="https://images.pexels.com/photos/3997391/pexels-photo-3997391.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Lucrare unghii" class="w-full aspect-square object-cover rounded-sm card-shadow" />
-      <img src="https://images.pexels.com/photos/3997384/pexels-photo-3997384.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Lucrare unghii" class="w-full aspect-square object-cover rounded-sm card-shadow" />
-    </div>
-    <div class="text-center mt-10">
-      <a href="gallery.html" class="btn-outline inline-block border border-gold text-gold tracking-[0.2em] text-xs uppercase px-9 py-4" data-en="View full gallery">Vezi galeria completă</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== REVIEWS ===== -->
-<section class="py-20 lg:py-24">
-  <div class="max-w-6xl mx-auto px-5 lg:px-8">
-    <div class="text-center">
-      <p class="text-gold tracking-[0.35em] text-xs uppercase" data-en="Testimonials">Testimoniale</p>
-      <h2 class="font-serif text-4xl md:text-5xl mt-3 gold-line center" data-en="Client reviews">Recenzii clienți</h2>
-      <p class="mt-5 text-[15px] text-neutral-500" data-en="4.96 out of 5 &middot; 45 reviews">4.96 din 5 &middot; 45 evaluări</p>
-    </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
-      <div class="bg-white rounded-sm p-7 card-shadow border border-neutral-100">
-        <div class="text-gold text-base tracking-wide">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="mt-4 text-[14px] leading-[1.75] text-neutral-600" data-en="They worked with great care and attention; the manicure turned out perfect and beautiful. Thank you so much!">A lucrat cu mare atenție și grijă, a ieșit o manichiură perfectă și frumoasă. Mulțumesc mult!</p>
-        <p class="mt-5 font-serif text-lg">Andreea P.</p>
-      </div>
-      <div class="bg-white rounded-sm p-7 card-shadow border border-neutral-100">
-        <div class="text-gold text-base tracking-wide">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="mt-4 text-[14px] leading-[1.75] text-neutral-600" data-en="Premium, ultra-resistant nails! Professional techniques and products!">Unghii premium, ultra-rezistente! Tehnici și produse profesionale!</p>
-        <p class="mt-5 font-serif text-lg">Cristina M.</p>
-      </div>
-      <div class="bg-white rounded-sm p-7 card-shadow border border-neutral-100">
-        <div class="text-gold text-base tracking-wide">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="mt-4 text-[14px] leading-[1.75] text-neutral-600" data-en="Top quality every time, highly recommend!">Top de fiecare dată, recomand!</p>
-        <p class="mt-5 font-serif text-lg">Raluca D.</p>
-      </div>
-      <div class="bg-white rounded-sm p-7 card-shadow border border-neutral-100">
-        <div class="text-gold text-base tracking-wide">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="mt-4 text-[14px] leading-[1.75] text-neutral-600" data-en="The best!">The best!</p>
-        <p class="mt-5 font-serif text-lg">Diana T.</p>
+      <div class="card reveal">
+        <div class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg></div>
+        <h3 style="font-size:1.3rem;margin-top:1.3rem;">Ghid practic de ieșire din blocaj</h3>
+        <p class="body-text" style="margin-top:.7rem;">Știi ce ai de făcut, dar nu aplici. Un sistem simplu, de aplicat zilnic, pentru a ieși din blocaj și a crea ritm.</p>
+        <p id="price-s3" class="price" style="font-size:1.25rem;margin-top:1.2rem;">69 lei</p>
+        <a href="ghid.html" class="tag" style="display:inline-block;margin-top:.8rem;border-bottom:1px solid var(--gold);padding-bottom:.2rem;color:var(--ink);">Detalii →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== BOOKING ===== -->
-<section id="booking" class="py-20 lg:py-28 bg-cream">
-  <div class="max-w-6xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
-    <div class="banner rounded-sm p-10 lg:p-12 text-white flex flex-col justify-center">
-      <p class="text-goldlight tracking-[0.35em] text-xs uppercase" data-en="Appointments">Programări</p>
-      <h2 class="font-serif text-4xl mt-3" data-en="Book an appointment">Programează-te</h2>
-      <div class="mt-7 space-y-3 text-[15px]">
-        <div class="flex justify-between border-b border-white/10 pb-3">
-          <span class="text-white/70" data-en="Monday - Sunday">Luni - Duminică</span><span class="text-goldlight">9:00 - 18:00</span>
-        </div>
-        <div class="flex justify-between border-b border-white/10 pb-3">
-          <span class="text-white/70" data-en="Address">Adresă</span><span class="text-goldlight">Strada Lalelelor 8, Timișoara</span>
-        </div>
-      </div>
-      <p class="mt-6 text-white/60 text-[13px]" data-en="Appointments by phone.">Programări prin telefon.</p>
-      <a href="tel:0700000000" class="btn-outline inline-block mt-7 self-start border border-goldlight text-white tracking-[0.2em] text-xs uppercase px-8 py-4" data-en="Call 0700 000 000">Sună 0700 000 000</a>
+<!-- ===== METHOD ===== -->
+<section class="section bg-sand">
+  <div class="wrap grid lg:grid-cols-2 gap-12 lg:gap-16 items-center" style="display:grid;" data-stagger>
+    <div class="framed reveal" style="order:2;">
+      <img id="method-img" src="https://8e7f0d5cdc.clvaw-cdnwnd.com/a75a967756010852475dcf8b4b092078/200001036-60d4e60d50/022bun.jpeg?ph=8e7f0d5cdc" alt="Luminița Georgescu" style="width:100%;aspect-ratio:4/5;object-fit:cover;" />
     </div>
-    <div class="rounded-sm overflow-hidden card-shadow min-h-[320px]">
-      <iframe
-        title="Mira Nail Atelier - locație"
-        src="https://maps.google.com/maps?q=45.7489,21.2087&z=13&ie=UTF8&iwloc=&output=embed"
-        class="w-full h-full min-h-[320px] border-0" loading="lazy"></iframe>
+    <div style="order:1;">
+      <p class="label reveal">Metoda</p>
+      <h2 class="h-section reveal underline-gold" style="margin-top:.8rem;">Enjoy Being Alive</h2>
+      <p class="body-text reveal" style="margin-top:1.6rem;">Lucrez cu oameni care simt că viața lor nu mai poate continua la fel, care trec prin blocaj, confuzie sau oboseală profundă, dar încă nu reușesc să vadă clar ce se întâmplă.</p>
+      <p class="body-text reveal" style="margin-top:1rem;">Este despre a vedea limpede, a nu te mai minți, a recunoaște adevărul interior și a începe să trăiești în acord cu tine, cu valorile tale și cu bucuria de a fi în viață.</p>
+      <a href="despre.html" class="btn btn--ghost reveal" style="margin-top:2rem;">Citește povestea mea</a>
     </div>
   </div>
 </section>
+
+<!-- ===== QUOTE BAND ===== -->
+<section class="section quote-band" style="text-align:center;">
+  <div class="wrap" style="max-width:44rem;" data-stagger>
+    <p id="quote-text" class="script reveal" style="font-size:clamp(2.4rem,5.5vw,4rem);">Totul în viață vine la mine cu ușurință, bucurie și glorie</p>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="section bg-white" style="text-align:center;">
+  <div class="wrap" style="max-width:44rem;" data-stagger>
+    <h2 class="h-section reveal">Dacă ai nevoie de un spațiu în care lucrurile să se vadă mai limpede</h2>
+    <p class="lead reveal" style="margin-top:1.2rem;">Aici te pot susține, cu pași reali, de făcut mai departe.</p>
+    <a href="contact.html" class="btn btn--cta reveal" style="margin-top:2rem;">Programează-te <span class="arrow">→</span></a>
+  </div>
+</section>
+
+</main>
 
 <!-- ===== FOOTER ===== -->
-<footer class="bg-ink pt-16 pb-8">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8 text-center">
-    <a href="index.html" class="inline-flex flex-col items-center">
-      <span class="font-script text-goldlight text-6xl leading-none">Mn</span>
-      <span class="font-serif text-white tracking-[0.3em] text-sm mt-2">MIRA NAIL</span>
-      <span class="font-serif text-gold tracking-[0.45em] text-[10px] mt-1">ATELIER</span>
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="index.html" style="display:inline-flex;flex-direction:column;align-items:center;">
+      <span class="mark">Lg</span><span class="fname">LUMINIȚA</span><span class="fsub">GEORGESCU</span>
     </a>
-    <div class="flex justify-center gap-4 mt-7">
-      <a href="#" aria-label="Facebook" class="w-10 h-10 grid place-items-center rounded-full border border-gold/60 text-goldlight hover:bg-gold hover:text-white transition">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-9h3l1-4h-4V7c0-1 .3-2 2-2h2V1.5C18.7 1.4 17.5 1 16 1c-3 0-5 2-5 5v3H8v4h3v9h2Z"/></svg>
-      </a>
-      <a href="#" aria-label="TikTok" class="w-10 h-10 grid place-items-center rounded-full border border-gold/60 text-goldlight hover:bg-gold hover:text-white transition">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2.3 1.8 4.1 4 4.4v3.1c-1.6 0-3.1-.5-4.4-1.4v6.4a6.2 6.2 0 1 1-6.2-6.2c.3 0 .6 0 1 .1v3.2a3 3 0 1 0 2.1 2.9V3H16Z"/></svg>
-      </a>
+    <div class="foot-links">
+      <a href="despre.html">Despre mine</a>
+      <a href="servicii.html">Servicii</a>
+      <a href="ghid.html">Ghid practic</a>
+      <a href="magazin.html">Magazin</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <div class="border-t border-white/10 mt-10 pt-6">
-      <p class="text-white/40 text-[12px] tracking-wide">&copy; 2026 Mira Nail Atelier. <span data-en="All rights reserved.">Toate drepturile rezervate.</span></p>
+    <div class="social">
+      <a href="https://www.facebook.com/alegericonstiente" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-9h3l1-4h-4V7c0-1 .3-2 2-2h2V1.5C18.7 1.4 17.5 1 16 1c-3 0-5 2-5 5v3H8v4h3v9h2Z"/></svg></a>
+      <a href="https://www.instagram.com/access_barsclub_bucharest" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
     </div>
+    <p class="copy">&copy; 2026 Luminița Georgescu. Toate drepturile rezervate.</p>
   </div>
 </footer>
 
-<!-- ===== FLOATING BUTTONS ===== -->
-<div class="fixed right-0 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-[2px]">
-  <a href="#booking" aria-label="Programează" class="w-12 h-12 grid place-items-center bg-ink text-goldlight hover:bg-gold hover:text-white transition">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
-  </a>
-  <a href="tel:0700000000" aria-label="Sună" class="w-12 h-12 grid place-items-center bg-ink text-goldlight hover:bg-gold hover:text-white transition">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c1 .3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>
-  </a>
-</div>
-
-<script>
-function setLang(lang){
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-en]').forEach(function(el){
-    if (el.dataset.ro === undefined) el.dataset.ro = el.innerHTML;
-    el.innerHTML = (lang === 'en') ? el.dataset.en : el.dataset.ro;
-  });
-  document.querySelectorAll('[data-lang-btn]').forEach(function(b){
-    b.textContent = (lang === 'en') ? 'RO' : 'EN';
-  });
-  try { sessionStorage.setItem('mira-lang', lang); } catch(e){}
-}
-document.querySelectorAll('[data-lang-btn]').forEach(function(b){
-  b.addEventListener('click', function(){
-    var cur = (document.documentElement.lang === 'en') ? 'en' : 'ro';
-    setLang(cur === 'en' ? 'ro' : 'en');
-  });
-});
-(function(){
-  var saved = 'ro';
-  try { saved = sessionStorage.getItem('mira-lang') || 'ro'; } catch(e){}
-  setLang(saved);
-})();
-document.getElementById('menuBtn').addEventListener('click', function(){
-  document.getElementById('mobileNav').classList.toggle('hidden');
-});
-</script>
+<script src="content-loader.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

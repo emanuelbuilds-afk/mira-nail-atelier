@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Magazin | Luminița Georgescu</title>
+<meta name="description" content="Ghid practic, profil hologenetic, citire intuitivă scrisă și sesiuni individuale. Instrumente pentru claritate și transformare." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@400;500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand">
+      <img src="logo.webp" alt="Enjoy Being Alive — Luminița Georgescu" class="brand-logo" />
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Acasă</a>
+      <a href="despre.html">Despre mine</a>
+      <a href="servicii.html">Servicii</a>
+      <a href="ghid.html">Ghid practic</a>
+      <a href="magazin.html" class="active">Magazin</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:.8rem;">
+      <a href="contact.html" class="btn btn--cta show-lg">Programează-te</a>
+      <button id="menuBtn" class="menu-btn" aria-label="Meniu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileNav" class="mobile-nav">
+    <a href="index.html">Acasă</a>
+    <a href="despre.html">Despre mine</a>
+    <a href="servicii.html">Servicii</a>
+    <a href="ghid.html">Ghid practic</a>
+    <a href="magazin.html" class="active">Magazin</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn--cta" style="margin-top:.8rem;">Programează-te</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== PAGE HEAD ===== -->
+<section class="section bg-sand" style="padding-top:4rem;padding-bottom:4rem;text-align:center;">
+  <div class="wrap" data-stagger>
+    <p class="label reveal">Magazin</p>
+    <h1 class="display reveal underline-gold center" style="margin-top:.8rem;">Toate produsele</h1>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section class="section">
+  <div class="wrap grid sm:grid-cols-2 lg:grid-cols-4 gap-7" style="display:grid;" data-stagger>
+
+    <!-- Product 1 -->
+    <div class="card reveal zoom" style="padding:0;display:flex;flex-direction:column;overflow:hidden;">
+      <img src="https://8e7f0d5cdc.clvaw-cdnwnd.com/a75a967756010852475dcf8b4b092078/200001014-1e4391e43a/F%C4%83r%C4%83%20titlu%20%28800%20x%20800%20px%29.png?ph=8e7f0d5cdc" alt="Ghid practic de ieșire din blocaj" style="width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--sand);" />
+      <div style="padding:1.5rem;display:flex;flex-direction:column;flex:1;">
+        <h3 style="font-size:1.1rem;line-height:1.25;">Ghid practic de ieșire din blocaj</h3>
+        <p style="font-size:.83rem;color:rgba(59,51,43,.55);margin-top:.5rem;line-height:1.6;flex:1;">Știi ce ai de făcut, dar nu aplici. Un sistem simplu, de aplicat zilnic.</p>
+        <div style="display:flex;align-items:baseline;gap:.5rem;margin-top:1rem;">
+          <span class="price" style="font-size:1.25rem;">69 lei</span><span class="strike" style="font-size:.85rem;">99 lei</span>
+        </div>
+        <a href="ghid.html" class="btn btn--cta" style="justify-content:center;margin-top:1rem;padding:.85rem 1rem;">Comandă</a>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="card reveal zoom" style="padding:0;display:flex;flex-direction:column;overflow:hidden;">
+      <img src="https://8e7f0d5cdc.clvaw-cdnwnd.com/a75a967756010852475dcf8b4b092078/200000980-e9ea3e9ea4/PACHETUL%201...png?ph=8e7f0d5cdc" alt="Mesajul vieții tale - profil hologenetic" style="width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--sand);" />
+      <div style="padding:1.5rem;display:flex;flex-direction:column;flex:1;">
+        <h3 style="font-size:1.1rem;line-height:1.25;">Mesajul vieții tale</h3>
+        <p style="font-size:.83rem;color:rgba(59,51,43,.55);margin-top:.5rem;line-height:1.6;flex:1;">O analiză profundă a hărții tale hologenetice, cu PDF personalizat.</p>
+        <div style="display:flex;align-items:baseline;gap:.5rem;margin-top:1rem;">
+          <span class="price" style="font-size:1.25rem;">450 lei</span><span class="strike" style="font-size:.85rem;">600 lei</span>
+        </div>
+        <a href="servicii.html" class="btn btn--cta" style="justify-content:center;margin-top:1rem;padding:.85rem 1rem;">Comandă</a>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="card reveal zoom" style="padding:0;display:flex;flex-direction:column;overflow:hidden;">
+      <img src="https://8e7f0d5cdc.clvaw-cdnwnd.com/a75a967756010852475dcf8b4b092078/200000992-0acc50acc6/Clarific%C4%83ri...png?ph=8e7f0d5cdc" alt="Citire intuitivă scrisă" style="width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--sand);" />
+      <div style="padding:1.5rem;display:flex;flex-direction:column;flex:1;">
+        <h3 style="font-size:1.1rem;line-height:1.25;">Citire intuitivă scrisă</h3>
+        <p style="font-size:.83rem;color:rgba(59,51,43,.55);margin-top:.5rem;line-height:1.6;flex:1;">Clarificări pentru suflet. Ghidare personalizată pe email + audio.</p>
+        <div style="display:flex;align-items:baseline;gap:.5rem;margin-top:1rem;">
+          <span class="price" style="font-size:1.25rem;">149 lei</span><span class="strike" style="font-size:.85rem;">259 lei</span>
+        </div>
+        <a href="contact.html" class="btn btn--cta" style="justify-content:center;margin-top:1rem;padding:.85rem 1rem;">Comandă</a>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="card reveal" style="padding:0;display:flex;flex-direction:column;overflow:hidden;">
+      <div style="width:100%;aspect-ratio:1/1;background:var(--cta);display:grid;place-items:center;">
+        <div style="text-align:center;">
+          <span class="script" style="color:var(--goldlight);font-size:3rem;">1:1</span>
+          <span style="display:block;font-family:'Playfair Display',serif;color:#fff;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;margin-top:.4rem;">Sesiune</span>
+        </div>
+      </div>
+      <div style="padding:1.5rem;display:flex;flex-direction:column;flex:1;">
+        <h3 style="font-size:1.1rem;line-height:1.25;">Sesiune individuală 1:1</h3>
+        <p style="font-size:.83rem;color:rgba(59,51,43,.55);margin-top:.5rem;line-height:1.6;flex:1;">Claritate și direcție. 60–90 min, în persoană sau online.</p>
+        <div style="display:flex;align-items:baseline;gap:.5rem;margin-top:1rem;">
+          <span class="price" style="font-size:1.25rem;">500 lei</span><span class="strike" style="font-size:.85rem;">750 lei</span>
+        </div>
+        <a href="contact.html" class="btn btn--cta" style="justify-content:center;margin-top:1rem;padding:.85rem 1rem;">Programează-te</a>
+      </div>
+    </div>
+
+  </div>
+  <p style="text-align:center;font-size:.83rem;color:rgba(59,51,43,.5);margin:3rem auto 0;max-width:34rem;line-height:1.7;">Pentru comenzi și programări, scrie-mi pe email sau telefon. Răspund personal fiecărui mesaj.</p>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="index.html" style="display:inline-flex;flex-direction:column;align-items:center;">
+      <span class="mark">Lg</span><span class="fname">LUMINIȚA</span><span class="fsub">GEORGESCU</span>
+    </a>
+    <div class="foot-links">
+      <a href="despre.html">Despre mine</a>
+      <a href="servicii.html">Servicii</a>
+      <a href="ghid.html">Ghid practic</a>
+      <a href="magazin.html">Magazin</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="social">
+      <a href="https://www.facebook.com/alegericonstiente" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-9h3l1-4h-4V7c0-1 .3-2 2-2h2V1.5C18.7 1.4 17.5 1 16 1c-3 0-5 2-5 5v3H8v4h3v9h2Z"/></svg></a>
+      <a href="https://www.instagram.com/access_barsclub_bucharest" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    </div>
+    <p class="copy">&copy; 2026 Luminița Georgescu. Toate drepturile rezervate.</p>
+  </div>
+</footer>
+
+<script src="content-loader.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

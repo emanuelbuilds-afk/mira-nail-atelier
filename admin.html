@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Panou de administrare | Luminița Georgescu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#faf6f0;--sand:#f1e8dc;--gold:#b0894f;--ink:#3b332b;
+  --cta:#241c14;--body:#4a4036;--radius:4px;
+}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--body);min-height:100vh;}
+
+/* AUTH SCREEN */
+#auth-screen{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:100vh;padding:2rem;
+}
+#auth-screen img{height:90px;width:auto;margin-bottom:1.5rem;}
+#auth-screen h1{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--ink);margin-bottom:.4rem;text-align:center;}
+#auth-screen p{font-size:.85rem;color:rgba(74,64,54,.6);margin-bottom:2rem;text-align:center;}
+.auth-card{background:#fff;border:1px solid var(--sand);padding:2.4rem;width:100%;max-width:340px;box-shadow:0 20px 50px -30px rgba(110,80,40,.35);}
+.auth-card input{
+  width:100%;border:1px solid rgba(176,137,79,.4);background:var(--cream);
+  padding:.85rem 1rem;font-family:'Jost',sans-serif;font-size:.9rem;color:var(--ink);
+  border-radius:var(--radius);outline:none;
+}
+.auth-card input:focus{border-color:var(--gold);}
+.auth-card button{
+  width:100%;margin-top:.8rem;background:var(--cta);color:#fff;border:none;
+  padding:1rem;font-family:'Jost',sans-serif;text-transform:uppercase;letter-spacing:.18em;
+  font-size:.75rem;cursor:pointer;border-radius:var(--radius);
+  transition:background .25s;
+}
+.auth-card button:hover{background:#352a1f;}
+#auth-error{color:#c0392b;font-size:.82rem;margin-top:.6rem;text-align:center;min-height:1.1rem;}
+
+/* ADMIN PANEL */
+#admin-panel{display:none;padding-bottom:6rem;}
+.adm-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,246,240,.9);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(176,137,79,.2);
+  display:flex;align-items:center;gap:1rem;padding:.75rem 1.5rem;
+}
+.adm-header img{height:44px;width:auto;}
+.adm-header-title{font-family:'Playfair Display',serif;font-size:1rem;color:var(--ink);flex:1;}
+.adm-header-title span{display:block;font-family:'Jost',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;color:var(--gold);}
+#logout-btn{
+  background:none;border:1px solid rgba(176,137,79,.4);color:var(--body);
+  padding:.4rem .9rem;font-family:'Jost',sans-serif;font-size:.72rem;
+  text-transform:uppercase;letter-spacing:.1em;cursor:pointer;border-radius:var(--radius);
+  transition:border-color .2s,color .2s;
+}
+#logout-btn:hover{border-color:var(--gold);color:var(--ink);}
+
+/* TOKEN NOTICE */
+#token-notice{
+  background:#fef9ec;border:1px solid rgba(176,137,79,.4);border-radius:var(--radius);
+  margin:1.5rem;padding:1.2rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;
+}
+#token-notice p{font-size:.83rem;color:var(--body);flex:1;min-width:200px;line-height:1.6;}
+#token-notice p strong{color:var(--ink);}
+.token-row{display:flex;gap:.6rem;flex-wrap:wrap;}
+#token-input{
+  border:1px solid rgba(176,137,79,.4);background:#fff;padding:.6rem .9rem;
+  font-family:'Jost',sans-serif;font-size:.82rem;color:var(--ink);
+  border-radius:var(--radius);outline:none;min-width:240px;
+}
+#token-input:focus{border-color:var(--gold);}
+#save-token-btn{
+  background:var(--gold);color:#fff;border:none;padding:.6rem 1.2rem;
+  font-family:'Jost',sans-serif;font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;
+  cursor:pointer;border-radius:var(--radius);white-space:nowrap;
+}
+
+/* FORM WRAPPER */
+.adm-body{max-width:860px;margin:0 auto;padding:0 1.5rem;}
+
+/* SECTIONS */
+.adm-section{background:#fff;border:1px solid var(--sand);border-radius:var(--radius);padding:1.8rem;margin-top:1.5rem;}
+.adm-section h2{
+  font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--ink);
+  margin-bottom:1.4rem;padding-bottom:.8rem;border-bottom:1px solid var(--sand);
+}
+.adm-section h2 span{
+  font-family:'Jost',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.2em;
+  color:var(--gold);display:block;margin-bottom:.2rem;
+}
+
+/* FIELDS */
+.field{margin-bottom:1.2rem;}
+.field:last-child{margin-bottom:0;}
+.field label{
+  display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;
+  color:var(--gold);margin-bottom:.4rem;font-weight:500;
+}
+.field input,.field textarea{
+  width:100%;border:1px solid rgba(176,137,79,.3);background:var(--cream);
+  padding:.75rem 1rem;font-family:'Jost',sans-serif;font-size:.88rem;color:var(--ink);
+  border-radius:var(--radius);outline:none;
+}
+.field input:focus,.field textarea:focus{border-color:var(--gold);background:#fff;}
+.field textarea{resize:vertical;min-height:80px;line-height:1.6;}
+.field-note{font-size:.75rem;color:rgba(74,64,54,.5);margin-top:.35rem;line-height:1.5;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.field-row{grid-template-columns:1fr;}}
+
+/* IMAGE FIELD */
+.img-field{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start;}
+@media(max-width:500px){.img-field{grid-template-columns:1fr;}}
+.img-preview{
+  width:80px;height:80px;object-fit:cover;border:1px solid var(--sand);
+  border-radius:var(--radius);background:var(--sand);display:block;flex:none;
+}
+.img-preview[src=""]{display:none;}
+
+/* PRICE FIELDS */
+.price-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;}
+
+/* SAVE BAR */
+.save-bar{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(250,246,240,.95);backdrop-filter:blur(10px);
+  border-top:1px solid rgba(176,137,79,.2);
+  padding:1rem 1.5rem;display:flex;align-items:center;gap:1.2rem;
+  z-index:200;
+}
+#save-btn{
+  background:var(--cta);color:#fff;border:none;
+  padding:1rem 2.4rem;font-family:'Jost',sans-serif;text-transform:uppercase;
+  letter-spacing:.18em;font-size:.76rem;cursor:pointer;border-radius:var(--radius);
+  transition:background .25s,transform .2s;white-space:nowrap;
+}
+#save-btn:hover{background:#352a1f;transform:translateY(-1px);}
+#save-btn:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+#save-status{font-size:.83rem;color:var(--body);flex:1;}
+#save-status.ok{color:#27ae60;}
+#save-status.err{color:#c0392b;}
+</style>
+</head>
+<body>
+
+<!-- ===== AUTH SCREEN ===== -->
+<div id="auth-screen">
+  <img src="logo.webp" alt="Luminița Georgescu" />
+  <h1>Panou de administrare</h1>
+  <p>Introduceți parola pentru a continua</p>
+  <div class="auth-card">
+    <input type="password" id="pwd-input" placeholder="Parolă" autocomplete="current-password" />
+    <button id="login-btn">Intră</button>
+    <div id="auth-error"></div>
+  </div>
+</div>
+
+<!-- ===== ADMIN PANEL ===== -->
+<div id="admin-panel">
+
+  <header class="adm-header">
+    <img src="logo.webp" alt="Luminița Georgescu" />
+    <div class="adm-header-title">
+      <span>Panou de administrare</span>
+      luminitageorgescu.com
+    </div>
+    <button id="logout-btn">Ieși</button>
+  </header>
+
+  <!-- Token setup -->
+  <div id="token-notice">
+    <p>
+      <strong>Configurare token GitHub</strong> — necesar o singură dată pentru a salva modificările pe site.<br>
+      Cereți token-ul lui Emanuel și introduceți-l mai jos. Este salvat doar în browserul dvs.
+    </p>
+    <div class="token-row">
+      <input type="password" id="token-input" placeholder="Token GitHub (ghp_...)" />
+      <button id="save-token-btn">Salvează</button>
+    </div>
+  </div>
+
+  <div class="adm-body">
+
+    <!-- CONTACT -->
+    <div class="adm-section">
+      <h2><span>Secțiunea</span>Contact</h2>
+      <div class="field-row">
+        <div class="field">
+          <label>Telefon (format simplu)</label>
+          <input type="text" id="f-phone" placeholder="0733059512" />
+        </div>
+        <div class="field">
+          <label>Telefon (afișat pe site)</label>
+          <input type="text" id="f-phone-display" placeholder="0733 059 512" />
+        </div>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" id="f-email" placeholder="adresa@email.com" />
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>Link Facebook</label>
+          <input type="url" id="f-facebook" placeholder="https://www.facebook.com/..." />
+        </div>
+        <div class="field">
+          <label>Link Instagram</label>
+          <input type="url" id="f-instagram" placeholder="https://www.instagram.com/..." />
+        </div>
+      </div>
+    </div>
+
+    <!-- FOTOGRAFII -->
+    <div class="adm-section">
+      <h2><span>Secțiunea</span>Fotografii</h2>
+      <p class="field-note" style="margin-bottom:1.2rem;">Introduceți link-ul direct al fotografiei. Puteți folosi Google Drive (partajare publică), WordPress media, sau orice alt serviciu de găzduire imagini.</p>
+
+      <div class="field">
+        <label>Fotografie principală (pagina de start — stânga)</label>
+        <div class="img-field">
+          <div>
+            <input type="url" id="f-hero-img" placeholder="https://..." />
+          </div>
+          <img class="img-preview" id="prev-hero-img" src="" alt="preview" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Fotografie despre mine</label>
+        <div class="img-field">
+          <div>
+            <input type="url" id="f-about-img" placeholder="https://..." />
+          </div>
+          <img class="img-preview" id="prev-about-img" src="" alt="preview" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Fotografie secțiunea metodă (pagina de start — dreapta)</label>
+        <div class="img-field">
+          <div>
+            <input type="url" id="f-method-img" placeholder="https://..." />
+          </div>
+          <img class="img-preview" id="prev-method-img" src="" alt="preview" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Imagine ghid practic</label>
+        <div class="img-field">
+          <div>
+            <input type="url" id="f-ghid-img" placeholder="https://..." />
+          </div>
+          <img class="img-preview" id="prev-ghid-img" src="" alt="preview" />
+        </div>
+      </div>
+    </div>
+
+    <!-- PREȚURI -->
+    <div class="adm-section">
+      <h2><span>Secțiunea</span>Prețuri</h2>
+      <div class="price-grid">
+        <div class="field">
+          <label>Sesiuni 1:1 (card acasă)</label>
+          <input type="text" id="f-s1-price" placeholder="de la 500 lei" />
+        </div>
+        <div class="field">
+          <label>Sesiuni 1:1 (pagina servicii)</label>
+          <input type="text" id="f-s1-price-full" placeholder="500 lei" />
+        </div>
+        <div class="field">
+          <label>Mesajul vieții (card acasă)</label>
+          <input type="text" id="f-s2-price" placeholder="de la 450 lei" />
+        </div>
+        <div class="field">
+          <label>Mesajul vieții — Pachet Basic</label>
+          <input type="text" id="f-s2-basic" placeholder="450 lei" />
+        </div>
+        <div class="field">
+          <label>Mesajul vieții — Pachet Plus</label>
+          <input type="text" id="f-s2-plus" placeholder="700 lei" />
+        </div>
+        <div class="field">
+          <label>Ghid practic (card acasă)</label>
+          <input type="text" id="f-s3-price" placeholder="69 lei" />
+        </div>
+        <div class="field">
+          <label>Ghid practic (preț actual)</label>
+          <input type="text" id="f-ghid-price" placeholder="69 lei" />
+        </div>
+        <div class="field">
+          <label>Ghid practic (preț vechi tăiat)</label>
+          <input type="text" id="f-ghid-strike" placeholder="99 lei" />
+        </div>
+        <div class="field">
+          <label>Citire intuitivă scrisă</label>
+          <input type="text" id="f-s4-price" placeholder="de la 149 lei" />
+        </div>
+      </div>
+    </div>
+
+    <!-- TEXTE -->
+    <div class="adm-section">
+      <h2><span>Secțiunea</span>Texte principale</h2>
+      <div class="field">
+        <label>Titlu principal (pagina de start)</label>
+        <input type="text" id="f-hero-title" />
+      </div>
+      <div class="field">
+        <label>Subtitlu (pagina de start)</label>
+        <textarea id="f-hero-lead" rows="2"></textarea>
+      </div>
+      <div class="field">
+        <label>Primul paragraf — Despre mine</label>
+        <textarea id="f-about-p1" rows="3"></textarea>
+      </div>
+      <div class="field">
+        <label>Citat inspirațional</label>
+        <input type="text" id="f-quote" />
+      </div>
+    </div>
+
+  </div><!-- /adm-body -->
+</div><!-- /admin-panel -->
+
+<!-- SAVE BAR -->
+<div class="save-bar" id="save-bar" style="display:none;">
+  <button id="save-btn">Salvează și publică</button>
+  <div id="save-status"></div>
+</div>
+
+<script>
+const PASS = 'EBA2026';
+const GH_OWNER = 'emanuelbuilds-afk';
+const GH_REPO  = 'mira-nail-atelier';
+const GH_FILE  = 'content.json';
+const GH_API   = 'https://api.github.com/repos/' + GH_OWNER + '/' + GH_REPO + '/contents/' + GH_FILE;
+
+// --- AUTH ---
+function isLoggedIn() { return sessionStorage.getItem('lg_admin_auth') === '1'; }
+function showAdmin() {
+  document.getElementById('auth-screen').style.display = 'none';
+  document.getElementById('admin-panel').style.display = 'block';
+  document.getElementById('save-bar').style.display = 'flex';
+  loadContent();
+  updateTokenUI();
+}
+
+document.getElementById('login-btn').addEventListener('click', tryLogin);
+document.getElementById('pwd-input').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') tryLogin();
+});
+function tryLogin() {
+  var v = document.getElementById('pwd-input').value;
+  if (v === PASS) {
+    sessionStorage.setItem('lg_admin_auth', '1');
+    document.getElementById('auth-error').textContent = '';
+    showAdmin();
+  } else {
+    document.getElementById('auth-error').textContent = 'Parolă incorectă.';
+    document.getElementById('pwd-input').value = '';
+    document.getElementById('pwd-input').focus();
+  }
+}
+document.getElementById('logout-btn').addEventListener('click', function() {
+  sessionStorage.removeItem('lg_admin_auth');
+  location.reload();
+});
+
+if (isLoggedIn()) showAdmin();
+
+// --- TOKEN ---
+function getToken() { return localStorage.getItem('lg_gh_token') || ''; }
+function updateTokenUI() {
+  var notice = document.getElementById('token-notice');
+  var t = getToken();
+  document.getElementById('token-input').value = t ? '••••••••••••' : '';
+  notice.style.display = t ? 'none' : 'flex';
+}
+document.getElementById('save-token-btn').addEventListener('click', function() {
+  var v = document.getElementById('token-input').value.trim();
+  if (v && v !== '••••••••••••') {
+    localStorage.setItem('lg_gh_token', v);
+    updateTokenUI();
+    setStatus('Token salvat.', 'ok');
+  }
+});
+
+// --- LOAD CONTENT ---
+async function loadContent() {
+  var c;
+  try {
+    var r = await fetch('content.json?_=' + Date.now());
+    if (r.ok) c = await r.json();
+  } catch(e) {}
+  if (!c) return;
+
+  set('f-phone', c.phone);
+  set('f-phone-display', c.phone_display);
+  set('f-email', c.email);
+  set('f-facebook', c.facebook_url);
+  set('f-instagram', c.instagram_url);
+
+  setImgField('f-hero-img', 'prev-hero-img', c.hero_img);
+  setImgField('f-about-img', 'prev-about-img', c.about_img);
+  setImgField('f-method-img', 'prev-method-img', c.method_img);
+  setImgField('f-ghid-img', 'prev-ghid-img', c.ghid_img);
+
+  set('f-s1-price', c.s1_price);
+  set('f-s1-price-full', c.s1_price_full);
+  set('f-s2-price', c.s2_price);
+  set('f-s2-basic', c.s2_price_basic);
+  set('f-s2-plus', c.s2_price_plus);
+  set('f-s3-price', c.s3_price);
+  set('f-s4-price', c.s4_price);
+  set('f-ghid-price', c.ghid_price);
+  set('f-ghid-strike', c.ghid_price_strike);
+
+  set('f-hero-title', c.hero_title);
+  set('f-hero-lead', c.hero_lead);
+  set('f-about-p1', c.about_p1);
+  set('f-quote', c.quote);
+}
+
+function set(id, val) {
+  var el = document.getElementById(id);
+  if (el && val !== undefined) el.value = val;
+}
+function setImgField(inputId, previewId, url) {
+  var input = document.getElementById(inputId);
+  var preview = document.getElementById(previewId);
+  if (input && url) input.value = url;
+  if (preview && url) { preview.src = url; preview.style.display = 'block'; }
+}
+
+// Live preview on image URL change
+['f-hero-img','f-about-img','f-method-img','f-ghid-img'].forEach(function(id) {
+  var map = {'f-hero-img':'prev-hero-img','f-about-img':'prev-about-img','f-method-img':'prev-method-img','f-ghid-img':'prev-ghid-img'};
+  document.getElementById(id).addEventListener('input', function() {
+    var prev = document.getElementById(map[id]);
+    var url = this.value.trim();
+    if (url) { prev.src = url; prev.style.display = 'block'; }
+    else { prev.src = ''; prev.style.display = 'none'; }
+  });
+});
+
+// --- SAVE ---
+document.getElementById('save-btn').addEventListener('click', saveContent);
+
+async function saveContent() {
+  var token = getToken();
+  if (!token) {
+    setStatus('Introduceți token-ul GitHub mai sus pentru a putea salva.', 'err');
+    document.getElementById('token-notice').style.display = 'flex';
+    return;
+  }
+
+  var btn = document.getElementById('save-btn');
+  btn.disabled = true;
+  setStatus('Se salvează...', '');
+
+  var content = {
+    hero_title: val('f-hero-title'),
+    hero_lead: val('f-hero-lead'),
+    about_p1: val('f-about-p1'),
+    quote: val('f-quote'),
+    hero_img: val('f-hero-img'),
+    about_img: val('f-about-img'),
+    method_img: val('f-method-img'),
+    ghid_img: val('f-ghid-img'),
+    s1_price: val('f-s1-price'),
+    s1_price_full: val('f-s1-price-full'),
+    s2_price: val('f-s2-price'),
+    s2_price_basic: val('f-s2-basic'),
+    s2_price_plus: val('f-s2-plus'),
+    s3_price: val('f-s3-price'),
+    s4_price: val('f-s4-price'),
+    ghid_price: val('f-ghid-price'),
+    ghid_price_strike: val('f-ghid-strike'),
+    phone: val('f-phone'),
+    phone_display: val('f-phone-display'),
+    email: val('f-email'),
+    facebook_url: val('f-facebook'),
+    instagram_url: val('f-instagram')
+  };
+
+  try {
+    var getRes = await fetch(GH_API, {
+      headers: { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github+json' }
+    });
+    if (!getRes.ok) throw new Error('Nu s-a putut citi fișierul curent (token invalid?)');
+    var current = await getRes.json();
+
+    var jsonStr = JSON.stringify(content, null, 2);
+    var encoded = btoa(unescape(encodeURIComponent(jsonStr)));
+
+    var putRes = await fetch(GH_API, {
+      method: 'PUT',
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'Content-Type': 'application/json',
+        'Accept': 'application/vnd.github+json'
+      },
+      body: JSON.stringify({
+        message: 'Actualizare conținut site',
+        content: encoded,
+        sha: current.sha
+      })
+    });
+
+    if (putRes.ok) {
+      setStatus('Publicat! Site-ul se actualizează în aproximativ 30 de secunde.', 'ok');
+    } else {
+      var err = await putRes.json();
+      throw new Error(err.message || 'Eroare la publicare');
+    }
+  } catch(e) {
+    setStatus('Eroare: ' + e.message, 'err');
+  }
+
+  btn.disabled = false;
+}
+
+function val(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+function setStatus(msg, cls) {
+  var el = document.getElementById('save-status');
+  el.textContent = msg;
+  el.className = cls || '';
+}
+</script>
+</body>
+</html>
