@@ -28,7 +28,7 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div style="display:flex;align-items:center;gap:.8rem;">
-      <a href="contact.html" class="btn btn--cta show-lg">Programează-te</a>
+      <a href="contact.html" data-book class="btn btn--cta show-lg">Programează-te</a>
       <button id="menuBtn" class="menu-btn" aria-label="Meniu">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -41,7 +41,7 @@
     <a href="ghid.html">Ghid practic</a>
     <a href="magazin.html">Magazin</a>
     <a href="contact.html">Contact</a>
-    <a href="contact.html" class="btn btn--cta" style="margin-top:.8rem;">Programează-te</a>
+    <a href="contact.html" data-book class="btn btn--cta" style="margin-top:.8rem;">Programează-te</a>
   </div>
 </header>
 
@@ -52,7 +52,7 @@
   <div class="wrap" data-stagger style="max-width:42rem;">
     <p class="label reveal">Cum lucrăm împreună</p>
     <h1 class="display reveal" style="margin-top:.8rem;">Servicii</h1>
-    <p class="lead reveal" style="margin-top:1.2rem;">Un spațiu real în care lucrăm prin dialog și clarificare, dar și energetic, în funcție de ce este necesar.</p>
+    <p id="svc-intro-lead" class="lead reveal" style="margin-top:1.2rem;">Un spațiu real în care lucrăm prin dialog și clarificare, dar și energetic, în funcție de ce este necesar.</p>
   </div>
 </section>
 
@@ -64,13 +64,13 @@
       <h2 class="h-section underline-gold" style="font-size:clamp(1.7rem,3vw,2.3rem);margin-top:.4rem;">Sesiuni individuale 1:1</h2>
     </div>
     <div class="md:col-span-2 reveal">
-      <p class="body-text">Un spațiu sigur, direct și clar pentru oameni care au nevoie să vadă limpede ce îi ține pe loc și ce au de făcut mai departe. Te ajut să înțelegi ce se întâmplă în viața ta, să vezi unde te ții pe loc și să găsești pași reali de făcut mai departe.</p>
-      <p class="body-text" style="margin-top:1rem;">Lucrăm în profunzime cu blocaje emoționale, relația cu banii și succesul, relații care au nevoie de adevăr, confuzie, anxietate, lipsa de direcție și deciziile amânate. Combinăm dialogul (înțelegere, claritate, decizii) cu lucrul energetic (susținere, reglare, deschidere).</p>
+      <p id="s1-desc-p1" class="body-text">Un spațiu sigur, direct și clar pentru oameni care au nevoie să vadă limpede ce îi ține pe loc și ce au de făcut mai departe. Te ajut să înțelegi ce se întâmplă în viața ta, să vezi unde te ții pe loc și să găsești pași reali de făcut mai departe.</p>
+      <p id="s1-desc-p2" class="body-text" style="margin-top:1rem;">Lucrăm în profunzime cu blocaje emoționale, relația cu banii și succesul, relații care au nevoie de adevăr, confuzie, anxietate, lipsa de direcție și deciziile amânate. Combinăm dialogul (înțelegere, claritate, decizii) cu lucrul energetic (susținere, reglare, deschidere).</p>
       <div style="display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem;margin-top:1.6rem;padding-top:1.6rem;border-top:1px solid rgba(176,137,79,.25);">
         <span class="tag">60–90 minute · în persoană sau online</span>
         <span id="price-s1-full" class="price" style="font-size:1.6rem;margin-left:auto;">500 lei</span>
       </div>
-      <a href="contact.html" class="btn btn--cta" style="margin-top:1.5rem;">Programează-te <span class="arrow">→</span></a>
+      <a href="contact.html" data-book class="btn btn--cta" style="margin-top:1.5rem;">Programează-te <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -84,13 +84,13 @@
       <p class="tag" style="margin-top:.7rem;">Profil hologenetic</p>
     </div>
     <div class="md:col-span-2 reveal">
-      <p class="body-text">O analiză personalizată, bazată pe profilul tău hologenetic (Gene Keys), care te ajută să înțelegi mai clar cine ești, prin ce treci și încotro mergi. Analiza acoperă trei secvențe esențiale:</p>
+      <p id="s2-desc-p1" class="body-text">O analiză personalizată, bazată pe profilul tău hologenetic (Gene Keys), care te ajută să înțelegi mai clar cine ești, prin ce treci și încotro mergi. Analiza acoperă trei secvențe esențiale:</p>
       <div class="grid sm:grid-cols-3 gap-4" style="display:grid;margin-top:1.4rem;">
         <div style="background:var(--sand);padding:1.2rem;"><span style="font-family:'Playfair Display',serif;font-size:1.1rem;">Calea Geniului</span><span style="display:block;font-size:.82rem;color:rgba(59,51,43,.55);margin-top:.3rem;">direcția și potențialul tău natural</span></div>
         <div style="background:var(--sand);padding:1.2rem;"><span style="font-family:'Playfair Display',serif;font-size:1.1rem;">Secvența Venus</span><span style="display:block;font-size:.82rem;color:rgba(59,51,43,.55);margin-top:.3rem;">relații, emoții, tipare de conectare</span></div>
         <div style="background:var(--sand);padding:1.2rem;"><span style="font-family:'Playfair Display',serif;font-size:1.1rem;">Secvența Perla</span><span style="display:block;font-size:.82rem;color:rgba(59,51,43,.55);margin-top:.3rem;">bani, valoare și abundență</span></div>
       </div>
-      <p class="body-text" style="margin-top:1.2rem;">Primești un PDF personalizat cu interpretarea principalelor chei din profilul tău, întrebări de reflecție, ghidare practică și o meditație audio bonus pentru integrare. Necesită data, ora și locul nașterii. Livrare în 3–5 zile.</p>
+      <p id="s2-desc-p2" class="body-text" style="margin-top:1.2rem;">Primești un PDF personalizat cu interpretarea principalelor chei din profilul tău, întrebări de reflecție, ghidare practică și o meditație audio bonus pentru integrare. Necesită data, ora și locul nașterii. Livrare în 3–5 zile.</p>
       <div class="grid sm:grid-cols-2 gap-4" style="display:grid;margin-top:1.6rem;padding-top:1.6rem;border-top:1px solid rgba(176,137,79,.25);">
         <div style="display:flex;align-items:baseline;justify-content:space-between;border:1px solid rgba(176,137,79,.3);padding:1rem 1.2rem;">
           <span><b style="font-family:'Playfair Display',serif;font-weight:500;font-size:1.05rem;">Pachet BASIC</b><span style="display:block;font-size:.8rem;color:rgba(59,51,43,.55);">analiză scrisă, 3 secvențe</span></span>
@@ -114,7 +114,7 @@
       <h2 class="h-section underline-gold" style="font-size:clamp(1.7rem,3vw,2.3rem);margin-top:.4rem;">Citire intuitivă scrisă</h2>
     </div>
     <div class="md:col-span-2 reveal">
-      <p class="body-text">Clarificări pentru suflet. O ghidare personalizată, livrată pe email, împreună cu o activare energetică audio personalizată. Pentru momentele în care ai nevoie de claritate și de un sprijin blând, fără a programa o sesiune completă.</p>
+      <p id="s3-desc" class="body-text">Clarificări pentru suflet. O ghidare personalizată, livrată pe email, împreună cu o activare energetică audio personalizată. Pentru momentele în care ai nevoie de claritate și de un sprijin blând, fără a programa o sesiune completă.</p>
       <div style="display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem;margin-top:1.6rem;padding-top:1.6rem;border-top:1px solid rgba(176,137,79,.25);">
         <span class="tag">livrare pe email + audio</span>
         <span id="price-s4" class="price" style="font-size:1.6rem;margin-left:auto;">de la 149 lei</span>
@@ -127,8 +127,8 @@
 <!-- ===== CTA ===== -->
 <section class="section band-dark" style="text-align:center;">
   <div class="wrap" style="max-width:38rem;" data-stagger>
-    <h2 class="h-section reveal" style="color:#fff;">Nu ești sigur(ă) ce ți se potrivește?</h2>
-    <p class="reveal" style="color:rgba(255,255,255,.65);margin-top:1.1rem;line-height:1.8;">Scrie-mi și găsim împreună forma de lucru de care ai nevoie acum.</p>
+    <h2 id="svc-cta-title" class="h-section reveal" style="color:#fff;">Nu ești sigur(ă) ce ți se potrivește?</h2>
+    <p id="svc-cta-lead" class="reveal" style="color:rgba(255,255,255,.65);margin-top:1.1rem;line-height:1.8;">Scrie-mi și găsim împreună forma de lucru de care ai nevoie acum.</p>
     <a href="contact.html" class="btn btn--cta reveal" style="margin-top:2rem;">Contactează-mă <span class="arrow">→</span></a>
   </div>
 </section>

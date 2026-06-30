@@ -28,7 +28,7 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div style="display:flex;align-items:center;gap:.8rem;">
-      <a href="contact.html" class="btn btn--cta show-lg">Programează-te</a>
+      <a href="contact.html" data-book class="btn btn--cta show-lg">Programează-te</a>
       <button id="menuBtn" class="menu-btn" aria-label="Meniu">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -41,7 +41,7 @@
     <a href="ghid.html">Ghid practic</a>
     <a href="magazin.html">Magazin</a>
     <a href="contact.html">Contact</a>
-    <a href="contact.html" class="btn btn--cta" style="margin-top:.8rem;">Programează-te</a>
+    <a href="contact.html" data-book class="btn btn--cta" style="margin-top:.8rem;">Programează-te</a>
   </div>
 </header>
 
@@ -57,7 +57,7 @@
         <h1 id="hero-title" class="reveal" style="margin-top:.5rem;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2rem,4vw,3.2rem);line-height:1.18;letter-spacing:-.01em;color:var(--ink);">Claritate acolo unde acum simți doar blocaj</h1>
         <p id="hero-lead" class="lead reveal" style="margin-top:1.6rem;max-width:30rem;">Un spațiu real de lucru cu tine, în care începi să vezi limpede ce te ține pe loc și ce ai de făcut mai departe.</p>
         <div class="reveal" style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.2rem;">
-          <a href="contact.html" class="btn btn--cta">Programează-te <span class="arrow">→</span></a>
+          <a href="contact.html" data-book class="btn btn--cta">Programează-te <span class="arrow">→</span></a>
           <a href="servicii.html" class="btn btn--ghost">Vezi serviciile</a>
         </div>
       </div>
@@ -78,8 +78,8 @@
     <div class="rule reveal" style="max-width:9rem;margin:0 auto 1.6rem;"><span class="dot"></span></div>
     <p class="label reveal">Bine ai venit</p>
     <h2 class="h-section reveal" style="margin-top:1rem;">Nu ai ajuns aici<br>întâmplător</h2>
-    <p class="lead reveal" style="margin-top:1.6rem;">Poate ești într-un punct în care simți că ceva nu mai funcționează în viața ta, dar nu e clar încă ce ai de făcut mai departe.</p>
-    <p class="body-text reveal" style="margin-top:1.2rem;">Nu toate răspunsurile vin din a gândi mai mult. Uneori, claritatea apare când ai un spațiu în care te poți liniști, te poți deschide și nu trebuie să demonstrezi nimic. Pentru că, dincolo de ce spui, există întotdeauna un mecanism mai profund care se repetă. Acolo lucrăm.</p>
+    <p id="intro-lead" class="lead reveal" style="margin-top:1.6rem;">Poate ești într-un punct în care simți că ceva nu mai funcționează în viața ta, dar nu e clar încă ce ai de făcut mai departe.</p>
+    <p id="intro-body" class="body-text reveal" style="margin-top:1.2rem;">Nu toate răspunsurile vin din a gândi mai mult. Uneori, claritatea apare când ai un spațiu în care te poți liniști, te poți deschide și nu trebuie să demonstrezi nimic. Pentru că, dincolo de ce spui, există întotdeauna un mecanism mai profund care se repetă. Acolo lucrăm.</p>
   </div>
 </section>
 
@@ -94,21 +94,21 @@
       <div class="card reveal">
         <div class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/></svg></div>
         <h3 style="font-size:1.3rem;margin-top:1.3rem;">Sesiuni individuale 1:1</h3>
-        <p class="body-text" style="margin-top:.7rem;">Un spațiu sigur, direct și clar pentru oameni care au nevoie să vadă limpede ce îi ține pe loc și ce au de făcut mai departe.</p>
+        <p id="svc1-card-desc" class="body-text" style="margin-top:.7rem;">Un spațiu sigur, direct și clar pentru oameni care au nevoie să vadă limpede ce îi ține pe loc și ce au de făcut mai departe.</p>
         <p id="price-s1" class="price" style="font-size:1.25rem;margin-top:1.2rem;">de la 500 lei</p>
         <a href="servicii.html" class="tag" style="display:inline-block;margin-top:.8rem;border-bottom:1px solid var(--gold);padding-bottom:.2rem;color:var(--ink);">Detalii →</a>
       </div>
       <div class="card reveal">
         <div class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg></div>
         <h3 style="font-size:1.3rem;margin-top:1.3rem;">Mesajul vieții tale</h3>
-        <p class="body-text" style="margin-top:.7rem;">O analiză profundă a hărții tale hologenetice care te ajută să înțelegi mai clar cine ești, prin ce treci și încotro mergi.</p>
+        <p id="svc2-card-desc" class="body-text" style="margin-top:.7rem;">O analiză profundă a hărții tale hologenetice care te ajută să înțelegi mai clar cine ești, prin ce treci și încotro mergi.</p>
         <p id="price-s2" class="price" style="font-size:1.25rem;margin-top:1.2rem;">de la 450 lei</p>
         <a href="servicii.html" class="tag" style="display:inline-block;margin-top:.8rem;border-bottom:1px solid var(--gold);padding-bottom:.2rem;color:var(--ink);">Detalii →</a>
       </div>
       <div class="card reveal">
         <div class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg></div>
         <h3 style="font-size:1.3rem;margin-top:1.3rem;">Ghid practic de ieșire din blocaj</h3>
-        <p class="body-text" style="margin-top:.7rem;">Știi ce ai de făcut, dar nu aplici. Un sistem simplu, de aplicat zilnic, pentru a ieși din blocaj și a crea ritm.</p>
+        <p id="svc3-card-desc" class="body-text" style="margin-top:.7rem;">Știi ce ai de făcut, dar nu aplici. Un sistem simplu, de aplicat zilnic, pentru a ieși din blocaj și a crea ritm.</p>
         <p id="price-s3" class="price" style="font-size:1.25rem;margin-top:1.2rem;">69 lei</p>
         <a href="ghid.html" class="tag" style="display:inline-block;margin-top:.8rem;border-bottom:1px solid var(--gold);padding-bottom:.2rem;color:var(--ink);">Detalii →</a>
       </div>
@@ -125,8 +125,8 @@
     <div style="order:1;">
       <p class="label reveal">Metoda</p>
       <h2 class="h-section reveal underline-gold" style="margin-top:.8rem;">Enjoy Being Alive</h2>
-      <p class="body-text reveal" style="margin-top:1.6rem;">Lucrez cu oameni care simt că viața lor nu mai poate continua la fel, care trec prin blocaj, confuzie sau oboseală profundă, dar încă nu reușesc să vadă clar ce se întâmplă.</p>
-      <p class="body-text reveal" style="margin-top:1rem;">Este despre a vedea limpede, a nu te mai minți, a recunoaște adevărul interior și a începe să trăiești în acord cu tine, cu valorile tale și cu bucuria de a fi în viață.</p>
+      <p id="method-p1" class="body-text reveal" style="margin-top:1.6rem;">Lucrez cu oameni care simt că viața lor nu mai poate continua la fel, care trec prin blocaj, confuzie sau oboseală profundă, dar încă nu reușesc să vadă clar ce se întâmplă.</p>
+      <p id="method-p2" class="body-text reveal" style="margin-top:1rem;">Este despre a vedea limpede, a nu te mai minți, a recunoaște adevărul interior și a începe să trăiești în acord cu tine, cu valorile tale și cu bucuria de a fi în viață.</p>
       <a href="despre.html" class="btn btn--ghost reveal" style="margin-top:2rem;">Citește povestea mea</a>
     </div>
   </div>
@@ -142,9 +142,9 @@
 <!-- ===== CTA ===== -->
 <section class="section bg-white" style="text-align:center;">
   <div class="wrap" style="max-width:44rem;" data-stagger>
-    <h2 class="h-section reveal">Dacă ai nevoie de un spațiu în care lucrurile să se vadă mai limpede</h2>
-    <p class="lead reveal" style="margin-top:1.2rem;">Aici te pot susține, cu pași reali, de făcut mai departe.</p>
-    <a href="contact.html" class="btn btn--cta reveal" style="margin-top:2rem;">Programează-te <span class="arrow">→</span></a>
+    <h2 id="cta-title" class="h-section reveal">Dacă ai nevoie de un spațiu în care lucrurile să se vadă mai limpede</h2>
+    <p id="cta-lead" class="lead reveal" style="margin-top:1.2rem;">Aici te pot susține, cu pași reali, de făcut mai departe.</p>
+    <a href="contact.html" data-book class="btn btn--cta reveal" style="margin-top:2rem;">Programează-te <span class="arrow">→</span></a>
   </div>
 </section>
 
